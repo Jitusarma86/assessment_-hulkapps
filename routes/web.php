@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 
 /*
@@ -17,3 +18,5 @@ use App\Http\Controllers\LoginController;
 
 
 Route::get('/', [LoginController::class,'login']);
+
+Route::get('/admin', [AdminController::class,'admin']);
