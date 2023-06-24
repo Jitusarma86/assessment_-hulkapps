@@ -16,9 +16,9 @@
 
 @foreach($result as $val)
 
-<form id="std" action="{{url('/')}}/student" method="post" enctype="multipart/form-data">
+<form id="std" action="{{url('/')}}/student/{id}" method="post" enctype="multipart/form-data">
     @csrf
-        <div class="col-lg-7 col-mid-12 col-sm-12">  
+       <div class="col-lg-7 col-mid-12 col-sm-12">  
                 Name:<br>
                 <input type="text" class="form-control" name="name" value="{{$val->name}}">
         </div>
@@ -34,9 +34,10 @@
                 address:<br>
                 <input type="text" class="form-control" name="address" value="{{$val->address}}">
         </div>
+
         <div class="col-lg-7 col-mid-12 col-sm-12">  
                 img:<br>
-                <input type="text" class="form-control" name="phpto" value="{{$val->phpto}}">
+                <input type="file" name="image" class="form-control" value="">
         </div>
         <br>
         <button class="btn btn-primary" name="submit">Update</button>  

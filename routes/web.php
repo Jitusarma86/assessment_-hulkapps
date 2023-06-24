@@ -26,3 +26,4 @@ Route::get('/display', [AdminController::class,'display']);
 Route::get('/verify/{id}', [AdminController::class,'verify']);
 
 Route::get('/student/{id}', [StudentController::class,'student']);
+Route::post('/student/{id}', [StudentController::class,'update']);
