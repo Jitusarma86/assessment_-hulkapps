@@ -63,6 +63,7 @@ class AdminController extends Controller
                     $arr['photo']=$photo[$i];
                     */
 
+
                     $result=Student::create([
                         'name'=> $name[$i],
                         'email'=> $email[$i],
@@ -70,17 +71,22 @@ class AdminController extends Controller
                         'address'=> $address[$i],
                         'phpto'=> $photo[$i],
                     ]);
+
                     $i++;
 
                 }
-                unlink($file);
-                return view('admin');
+                //unlink($file);
+
             }
         }
+        return view('admin');
     }
 
     public function display()
     {
-        return "Hi";
+        $result=Student::all();
+
+        $data=compact('result');
+        return view('display')->with($data);
     }
 }
