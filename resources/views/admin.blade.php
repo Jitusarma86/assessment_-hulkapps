@@ -15,7 +15,7 @@
                 <br>
                 <div class="row">
                         <div class="col-lg-8 col-md-12 col-sm-12">
-                        <form id="fileUploadForm" action="{{url('/')}}/home" method="post" enctype="multipart/form-data">
+                        <form id="fileUploadForm" action="{{url('/')}}/admin" method="post" enctype="multipart/form-data">
                         @csrf
                         <input type="file" name="mycsv" id="mycsv" class="form-control" value="">
                         

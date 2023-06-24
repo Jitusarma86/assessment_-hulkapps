@@ -20,3 +20,4 @@ use App\Http\Controllers\LoginController;
 Route::get('/', [LoginController::class,'login']);
 
 Route::get('/admin', [AdminController::class,'admin']);
+Route::post('/admin', [AdminController::class,'adminSave']);
