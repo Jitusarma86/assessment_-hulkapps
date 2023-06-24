@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use Mail;
+use App\Models\User;
+//use Event;
 use App\Models\Student;
 use Illuminate\Http\Request;
-//use Event;
-use Mail;
 
 //use App\Events\SendMail;
 
@@ -60,20 +61,19 @@ class AdminController extends Controller
                     $photo[$i]=$filedata["photo"];
 
 
-                    /*$arr['name']=$name[$i];
-                    $arr['email']=$email[$i];
-                    $arr['dob']=$dob[$i];
-                    $arr['address']=$address[$i];
-                    $arr['photo']=$photo[$i];
-                    */
-
-
                     $result=Student::create([
                         'name'=> $name[$i],
                         'email'=> $email[$i],
                         'dob'=> $dob[$i],
                         'address'=> $address[$i],
                         'phpto'=> $photo[$i],
+                    ]);
+
+                    $user=User::create([
+                        'email'=>$email[$i],
+                        'password'=>'test@123',
+                        'role'=>'2',
+                        'status'=>'0',
                     ]);
 
                     $i++;
@@ -95,6 +95,20 @@ class AdminController extends Controller
     }
     public function verify($id)
     {
+        $newId="";
+        $user=User::select('id')->where('email', '=', $id)->get();
+        foreach($user as $val) {
+            $newId=$val->id;
+        }
+
+        //$result=Student::find($newId);
+
+        //$result->name=$request->name;
+
+        $upd=User::find($newId);
+        $upd->status='1';
+        $upd->save();
+
         $data=['data'=>'Your records are verified'];
         $user['to']=$id;
         Mail::send('mail', $data, function ($msg) use ($user) {
@@ -103,5 +117,6 @@ class AdminController extends Controller
         });
 
         return view('admin');
+
     }
 }

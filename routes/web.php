@@ -20,10 +20,15 @@ use App\Http\Controllers\StudentController;
 
 Route::get('/', [LoginController::class,'login']);
 
+Route::post('/', [LoginController::class,'loginDone']);
+
+//Route::get('/student_home', [LoginController::class,'student']);
+
 Route::get('/admin', [AdminController::class,'admin']);
 Route::post('/admin', [AdminController::class,'adminSave']);
 Route::get('/display', [AdminController::class,'display']);
 Route::get('/verify/{id}', [AdminController::class,'verify']);
+
 
 Route::get('/student/{id}', [StudentController::class,'student']);
 Route::post('/student/{id}', [StudentController::class,'update']);
