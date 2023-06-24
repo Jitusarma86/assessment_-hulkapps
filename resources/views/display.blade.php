@@ -25,6 +25,7 @@
       <th scope="col">dob</th>
       <th scope="col">address</th>
       <th scope="col">photo</th>
+      <th scope="col">verifies</th>
     </tr>
   </thead>
   <tbody>
@@ -47,6 +48,9 @@
             </td>
             <td>
                 {{$val->phpto}}
+            </td>
+            <td>
+            <a href="{{url('/')}}/verify/{{$val->email}}"> Verify </a>
             </td>
         </tr>
     @endforeach

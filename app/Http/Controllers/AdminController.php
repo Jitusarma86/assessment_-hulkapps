@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use Illuminate\Http\Request;
+//use Event;
+use Mail;
+
+//use App\Events\SendMail;
 
 class AdminController extends Controller
 {
@@ -88,5 +92,16 @@ class AdminController extends Controller
 
         $data=compact('result');
         return view('display')->with($data);
+    }
+    public function verify($id)
+    {
+        $data=['data'=>'Your records are verified'];
+        $user['to']=$id;
+        Mail::send('mail', $data, function ($msg) use ($user) {
+            $msg->to($user['to']);
+            $msg->subject('Verified');
+        });
+
+        return view('admin');
     }
 }
