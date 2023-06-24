@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\StudentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,5 @@ Route::get('/admin', [AdminController::class,'admin']);
 Route::post('/admin', [AdminController::class,'adminSave']);
 Route::get('/display', [AdminController::class,'display']);
 Route::get('/verify/{id}', [AdminController::class,'verify']);
+
+Route::get('/student', [StudentController::class,'student']);
