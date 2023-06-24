@@ -25,4 +25,4 @@ Route::post('/admin', [AdminController::class,'adminSave']);
 Route::get('/display', [AdminController::class,'display']);
 Route::get('/verify/{id}', [AdminController::class,'verify']);
 
-Route::get('/student', [StudentController::class,'student']);
+Route::get('/student/{id}', [StudentController::class,'student']);
