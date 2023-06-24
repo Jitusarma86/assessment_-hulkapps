@@ -25,6 +25,8 @@ class LoginController extends Controller
                 $stdMail=$request->email;
                 $data=compact('stdMail');
                 return view('student_home')->with($data);
+            } else {
+                return "will verify your details soon";
             }
         }
         //echo "<pre>";
