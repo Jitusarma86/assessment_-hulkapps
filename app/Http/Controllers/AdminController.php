@@ -78,4 +78,9 @@ class AdminController extends Controller
             }
         }
     }
+
+    public function display()
+    {
+        return "Hi";
+    }
 }

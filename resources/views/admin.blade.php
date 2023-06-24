@@ -27,6 +27,8 @@
                         <div class="col-lg-4 col-md-12 col-sm-12">  
                         <button class="btn btn-primary" name="upload" id="upload" >Import</button>  
 
+                        <span><a href="{{url('/')}}/display">Display</a></span>
+                        
                         
                         <div id="spenner" style="display:none;">
                             <div class="spinner-border text-primary" role="status">

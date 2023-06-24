@@ -21,3 +21,4 @@ Route::get('/', [LoginController::class,'login']);
 
 Route::get('/admin', [AdminController::class,'admin']);
 Route::post('/admin', [AdminController::class,'adminSave']);
+Route::get('/display', [AdminController::class,'display']);
