@@ -29,19 +29,5 @@ class LoginController extends Controller
                 return "will verify your details soon";
             }
         }
-        //echo "<pre>";
-        //print_r($user);
-
-
-        //return $user->password;
-        /*if($request->password=$user->password) {
-            return "Email or password not matched!";
-        }
-        if($request->role==1 && $request->status==1) {
-            return view('admin');
-        } elseif($request->role==2 && $request->status==1) {
-
-        }*/
-
     }
 }

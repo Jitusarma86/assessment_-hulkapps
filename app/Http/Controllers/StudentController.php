@@ -14,9 +14,6 @@ class StudentController extends Controller
         $result=Student::select('name', 'email', 'dob', 'address', 'phpto')->
         where('email', '=', $email)->get();
 
-        //echo "<pre>";
-        //print_r($result);
-        //$result=Student::where('email', '=', $id)->get();
         $data=compact('result');
         return view('student')->with($data);
     }
